@@ -1,0 +1,79 @@
+* {
+  margin: 0; /*Padrão das linguagens, o * é a seleção geral. */
+}
+
+html,
+body {
+    --gray:hsl(240, 9%, 89%); 
+    --black: hsl(240,6%,13%); /*Esse -- ta definindo o gray como variável, podendo ser usado mais tarde.*/
+  height: 100%;
+  font-family: 'Roboto', sans-serif; /*esse Sans-serif é uma fonte de apoio caso a roboto não esteja disponível */
+  -webkit-font-smoothing: antialiased; /*Esse -webkit indica que a propriedade que vem na frente dele irá apenas funcionar nos navegadores webkit */
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+main {
+  background: url(../images/Background.svg);
+  width: 375px;
+  height: 812px;
+}
+
+.container {
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: var(--gray); /*Chamando a variável gray*/
+}
+
+.avatar {
+    width: 10rem; /*A largura da imagem é de 160 px. cada REM vale 16px. Logo, 160 / 16 = 10rem. */
+    margin: 11.5rem auto 0;  /*Na ordem : Top, right, bottom, left */
+    position: relative; /*Define o limite para o absolute */
+}
+
+.avatar span { /*Procura dentro da classe avatar a tag span */
+    position: absolute; /*Coloca essa imagem por cima da outra. */
+    top: -15px;
+    z-index: 1; /*Configura o eixo Z da imagem */
+}
+
+
+.avatar > img { /*Separa por níveis, sendo o prímeiro nível a tag imagem diretamente abaixo da classe(Classe filha). */
+    width: 10rem; 
+    height: 11.5rem;
+    object-fit: cover; /* object-fit: Adapta a imagem / Cover: Cobre todo o espaço abaixo da imagem. */
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); /*Procura Clippy CSS no google, clica no primeiro link e pega as informações por lá*/
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+a {
+  color: var(--gray);
+  text-decoration: none;
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+  justify-content: center;
+}
+
+p{
+    margin-top: 2rem;
+}
+
+ul {
+    margin-top: 4rem;
+    list-style: none; /*Tira as bolinhas que ficam numa lista não ordenada */
+    padding: 0; /*Tira o preenchimento interno para alinhar*/
+    display: flex; /*Deixa as coisas uma ao lado da outra sem alinhar*/
+    gap: 0.5rem; /*Deixa um espaço entre as imagens*/
+    justify-content: center; /*Centraliza as imagens*/
+}
+
